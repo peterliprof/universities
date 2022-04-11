@@ -1,14 +1,14 @@
-# universities 
-## StartPage
+<h1><b>Universities</b></h1> 
+<h3><b>StartPage</b><h3>
 <img src="/src/screenshot/StartPage.png" width="300"/>
-##  Select Country
+<h3><b>Select Country</b><h3>
 <img src="/src/screenshot/SelectCountry.png" width="300"/>
-## Network Loading
+<h3><b>Network Loading</b></h3>
 <img src="/src/screenshot/NetworkPending.png" width="300"/>
-## Canada Results
+<h3><b>Canada Results</b></h3>
 <img src="/src/screenshot/CanadaResluts.png" width="300"/> 
-## US Results
+<h3><b>US Results</b></h3>
 <img src="/src/screenshot/USAResults.png" width="300"/>
-## Mexico Results
+<h3><b>Mexico Results<b></h3>
 <img src="/src/screenshot/MexicoResults.png" width="300"/>
      
