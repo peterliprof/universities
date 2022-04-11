@@ -27,14 +27,7 @@
     </td>
    </tr>  
      
-    <tr>
-    <td width="50%">
-      <img src="/src/screenshot/NetworkPending.png" width="300"/>
-    </td>
-    <td width="50%">
-       <img src="/src/screenshot/MexicoResults.png" width="300"/> 
-    </td>
-   </tr>   
+   
      
 </table>
 
