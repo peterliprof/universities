@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import {
     StyleSheet,
     View,
@@ -24,6 +23,6 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-
+      
     }
 });

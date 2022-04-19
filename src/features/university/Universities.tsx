@@ -13,30 +13,34 @@ import UniversityList from './UniversityList';
 import StartPage from './StartPage';
 import NetworkPending from './NetworkPending';
 
+
 export default function Universities() {
 
     const status = useAppSelector(selectStatus);
 
     return (
+
         <View style={styles.container}>
+           
             <DropdownPicker />
-            {(status == '') && <StartPage />}
-            {(status == 'pending') && <NetworkPending />}
-            {(status == 'idle') && <UniversityList />}
+
+            {(status === '') && <StartPage />}
+            {(status === 'pending') && <NetworkPending />}
+            {(status === 'idle') && <UniversityList />}
         </View>
-
+        
     );
-
-
 
 };
 
 
 const styles = StyleSheet.create({
     container: {
+
         flex: 1,
-        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: "#f5f5f5"
 
-
-    }
+    },
 });

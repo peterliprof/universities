@@ -6,7 +6,7 @@ import {
 } from 'react-native';
 
 import { useAppSelector } from '../../app/hooks';
-import { selectUniversities, selectStatus } from '../store/universitySlice';
+import { selectUniversities } from '../store/universitySlice';
 import University from './University';
 
 export default function UniversityList() {
@@ -23,6 +23,7 @@ export default function UniversityList() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        paddingTop: 25,
+        paddingTop: 5,
+
     },
 });

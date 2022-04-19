@@ -1,22 +1,24 @@
 import React, { useState } from 'react';
 import {
-    StyleSheet
+    View, StyleSheet, ScrollView, SafeAreaView
 } from 'react-native';
-
+import { Picker } from '@react-native-picker/picker';
 
 import { store } from '../../app/store';
 import { fetchUniversities } from '../store/universitySlice';
 
-import DropDownPicker from 'react-native-dropdown-picker';
+import { countryData } from '../../app/data';
 
-import { countries } from '../../app/data';
+import { Card} from 'react-native-paper';
 
 function DropdownPicker() {
-    const [open, setOpen] = useState(false);
-    const [value, setValue] = useState('');
    
+    const [selectedValue, setSelectedValue] = useState("");
+
     const handleChange = (country: string | null) => {
         if (country) {
+
+            setSelectedValue(country);
             store.dispatch(fetchUniversities(country));
 
         }
@@ -24,28 +26,54 @@ function DropdownPicker() {
 
     return (
 
-        <DropDownPicker
-            open={open}
-            value={value}
-            items={countries}
-            setOpen={setOpen}
-            setValue={setValue}
-            onChangeValue={handleChange}
-            placeholder='Select a Country'
-            style={styles.container}
-        />
+        <SafeAreaView style={styles.container}>
+            <View>
+                <Card style={styles.card}>
+                    <ScrollView>
+                        <Picker
+                            style={styles.pikerbox}
+                            selectedValue={selectedValue}
+                            onValueChange={handleChange}
+                            placeholder={'Select a Country'}
+                        >
+                            {countryData.map((country, index) => {
+                   
+                                    return (< Picker.Item label={country.label} value={country.value} key={index} />);
+                               
+                            })}
 
+                        </Picker>
+                    </ScrollView>
+                </Card>
+            </View>
+        </SafeAreaView>
 
     );
 }
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        marginTop: 5,
-        marginBottom: 15,
+        display: "flex",
+        justifyContent: "center",
+        width: "100%"
+    },
 
+    pikerbox: {
+        height: 40,
+        backgroundColor: "transparent",
+        justifyContent: "center",
+        alignItems: "center",
+        borderColor: "transparent",
+        borderBottomWidth: 1,
+        marginBottom: 25
+    },
+
+    card: {
+        borderWidth: 1,
+        borderColor: "#000000",
+        borderRadius: 10,
     }
+
 });
 
 export default DropdownPicker;
